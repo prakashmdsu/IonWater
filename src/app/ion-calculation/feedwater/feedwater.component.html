@@ -1,0 +1,321 @@
+<div class="row">
+    <form class="form-group form-group-lg" (ngSubmit)="saveFeedWater()" autocomplete="off" [formGroup]="feedwaterForm">
+        <div class=" top_applict row">
+            <div class="margin-lft  col-sm-3 ">
+
+                <input placeholder="Apllication Name" class="form-control" id="first-name" type="text"
+                    formControlName="apllicationName">
+            </div>
+            <div class="col-sm-3 ">
+
+                <select class="form-control cursor__pointer custom" id="weight" name="applicationType"
+                    formControlName="applicationType">
+                    <option value="" disabled selected hidden>
+                        -- Select Application Type--
+                    </option>
+                    <option value="Power">
+                        Power
+                    </option>
+                    <option value="Pharmaceutical">
+                        Pharmaceutical
+                    </option>
+                    <option value="Micro-E">
+                        Micro-E (Low Boron/Silica)
+                    </option>
+                    <option value="FoodandBeverage">
+                        Food and Beverage
+                    </option>
+                    <option value="Other">
+                        General Industry (Other)
+                    </option>
+
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="margin-lft col-sm-3 top_hws">
+                Hot Water Sanitation (HWS)
+                <label>
+                    <input type="radio" value="yes" formControlName="hotwaterSensation">
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" value="no" formControlName="hotwaterSensation">
+                    <span>No</span>
+                </label>
+            </div>
+
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="margin-lft col-sm-4 ">
+                <div class="input-w">
+                    <label for="#your-input">NH4 </label>
+                    <input id="your-input" (change)="commonCalculation()" class="form-control" type="text"
+                        formControlName="nH4">
+                    <input id="your-input" (change)="convertToPpm()" class="form-control" type="text"
+                        formControlName="nH4asppm">
+                </div>
+
+                <div class="input-w">
+                    <label for="last-name">K </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="k">
+                    <input id="your-input" (change)="convertToPpm()" class="form-control spc" type="text"
+                        formControlName="kasppm">
+                </div>
+
+                <div class="input-w">
+                    <label for="last-name">Na </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="na">
+                    <input id="your-input" (change)="convertToPpm()" formControlName="naasppm" class="form-control spc"
+                        type="text">
+                </div>
+
+
+
+
+                <div class="input-w">
+                    <label for="last-name">Mg </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="mg">
+                    <input id="your-input" formControlName="mgasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+
+                </div>
+
+                <div class="input-w">
+                    <label for="last-name">Ca </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="ca">
+                    <input id="your-input" formControlName="caasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">Sr </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="sr">
+                    <input id="your-input" formControlName="srasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+                <div class="input-w">
+                    <label for="last-name">Ba </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="ba">
+                    <input id="your-input" formControlName="baasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">Fe </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="fe">
+                    <input id="your-input" formControlName="feasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">Cu </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="cu">
+                    <input id="your-input" formControlName="cuasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">Al </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="al">
+                    <input id="your-input" formControlName="alasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">Mn </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="mn">
+                    <input id="your-input" formControlName="mnasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">Total </label>
+                    <div class="total">{{cmnCalc.cationsTotal}}</div>
+                </div>
+                <div class="inputspacng col-sm-6">
+                    <div class="hardess">Ca + Mg= {{cmnCalc.totalHardnessCaCO3}} ppm CaCO₃</div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-3 ">
+
+                <div class="input-w">
+                    <label for="last-name">Co3 </label>
+                    <input (change)="commonCalculation()" (change)="calculatePhValue()" class="form-control"
+                        id="last-name" type="text" formControlName="cO3">
+                    <input id="your-input" formControlName="cO3asppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">hcO3 </label>
+                    <input (change)="commonCalculation()" (change)="calculatePhValue()" class="form-control"
+                        id="last-name" type="text" formControlName="hcO3">
+                    <input id="your-input" formControlName="hcO3asppm" (change)="convertToPpm()"
+                        class="form-control spc" type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">No3 </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="nO3">
+                    <input id="your-input" formControlName="nO3asppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">cl </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="cl">
+                    <input id="your-input" formControlName="clasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">f </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="f">
+                    <input id="your-input" formControlName="fasppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">So4 </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="sO4">
+                    <input id="your-input" formControlName="sO4asppm" (change)="convertToPpm()" class="form-control spc"
+                        type="text">
+                </div>
+
+                <div class="input-w">
+                    <label for="last-name">Total </label>
+                    <div class="total">{{cmnCalc.anionsTotal}}</div>
+                </div>
+            </div>
+            <div class="col-sm-3 ">
+                <div class="input-w">
+                    <label for="last-name">B </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="b">
+
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">Sio2 </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="siO2">
+
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">CO2 </label>
+                    <input (change)="commonCalculation()" (change)="calculatePhValue()" class="form-control"
+                        id="last-name" type="text" formControlName="cO2">
+
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">H2S </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="h2S">
+
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">Ph7 </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="pH7">
+                    <span *ngIf="!this.feedwaterForm['controls']['chkCalculateCO2'].value" class="spc">
+                        <label for="last-name">Calc. pH</label>
+                        <div class="total"> {{this.feedwaterForm['controls']['calcpH7'].value}}</div>
+                    </span>
+
+                </div>
+
+
+                <div class="input-w">
+
+                </div>
+
+                <div class="input-w">
+                    <label for="last-name">TOC </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="toc">
+                </div>
+
+                <div class="input-w">
+                    <label for="last-name">Temp </label>
+                    <input (change)="commonCalculation()" class="form-control" id="last-name" type="text"
+                        formControlName="temp">
+                </div>
+
+
+                <div class="input-w">
+                    <label for="last-name">
+                        {{this.feedwaterForm['controls']['tempUnit'].value}}
+                    </label>
+                    <select class="form-control option_inline cursor__pointer custom" id="weight" name="applicationType"
+                        formControlName="tempUnit">
+                        <option selected value="°C">
+                            °C
+                        </option>
+                        <option value="°F">
+                            °F
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="">
+                    <input type="checkbox" id="chkCalculateCO2" formControlName="chkCalculateCO2" />
+                    <label style="font-size:9px" for="last-name"> Calculate CO2 </label>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="margin-lft">
+            <button class="btn btn-primary" type="submit">Next</button>
+
+        </div>
+
+
+
+
+    </form>
+</div>
+<div class="col-sm-6">
+    <app-warningmessage></app-warningmessage>
+</div>

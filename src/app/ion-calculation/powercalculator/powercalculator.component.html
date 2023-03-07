@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-sm-3">
+        System Summary
+        <form class="form-group form-group-lg" (ngSubmit)="savePowerCalculator()" autocomplete="off"
+            [formGroup]="powerCalculatorFg">
+            <table>
+                <tr>
+                    <td>Module Type</td>
+                    <td>{{moduleSizeRecord.moduleSize}}</td>
+                </tr>
+                <tr>
+                    <td>Total Product Flow</td>
+                    <td>{{moduleSizeData.productFlowRate}}</td>
+                </tr>
+                <tr>
+                    <td>Flow per Module</td>
+            
+                     <td>{{moduleSizeData.flowPerModule}} m³/h
+                    </td>
+                </tr>
+                <tr>
+                    <td>Number of Modules</td>
+                    <td>
+                        {{moduleSizeData.numberOfModule}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Current Efficiency</td>
+                    <td>
+                        <select class="form-control cursor__pointer custom" id="weight" name="textEASeekingInfo"
+                            formControlName="currentEfficiency">
+                            <option value="" disabled selected hidden>
+                                -- Select --
+                            </option>
+
+                            <option *ngFor="let option of listCuurentEfficiency" [value]="option.key">
+                                {{option.value}}
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Current Input Select</td>
+                    <td>
+
+                        <select class="form-control cursor__pointer custom" id="weight" name="textEASeekingInfo"
+                            formControlName="currentInput">
+                            <option value="" disabled selected hidden>
+                                -- Select --
+                            </option>
+                            <option value="UseCalculatedStartupCurrent">
+                                Use Calculated Startup Current
+                            </option>
+                            <option value="ManuallyInputCurrent">Manually Input Current</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Manual Current Input</td>
+                    <td>
+                        <input class="form-control" id="last-name" type="text" formControlName="manualCurrentInput">
+
+
+                    </td>
+                </tr>
+            </table>
+
+
+            <div class="mrgintop">
+                <span class="mrginLft"> <button class="btn btn-info" (click)="Back()">Back</button></span>
+                <span class="mrginLft">
+                    <span class="btn btn-primary" (click)="calculatePower()">Calculate</span>
+                </span>
+                <span class="mrginLft">
+                    <button class="btn btn-primary" type="submit">Next</button>
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-5">
+        <app-feedwatersummary></app-feedwatersummary>
+    </div>
+    <div class="col-sm-4">
+        <app-estimatedpowerrequirements></app-estimatedpowerrequirements>
+    </div>
+
+    <div class="row">
+        <div class="row">
+            <div class="col-sm-6">
+                <app-warningmessage></app-warningmessage>
+            </div>
+        </div>
+    </div>
+</div>

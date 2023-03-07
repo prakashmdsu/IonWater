@@ -1,0 +1,13 @@
+<ul>
+    <li><a class="active" [routerLink]="['savedapplication']" [routerLinkActive]="['active']">Saved Projects</a></li>
+    <li><a [routerLink]="['feedwater']">New Project</a></li>
+    <section>
+        <section>
+            <button *ngIf="!isUserAuthenticated" class="btn btn-link" style="color:gray"
+                (click)="login()">Login</button>
+            <button class="btn btn-link" style="color:gray" (click)="logout()">Logout</button>
+        </section>
+    </section>
+    <!-- <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li> -->
+</ul>

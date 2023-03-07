@@ -1,0 +1,15 @@
+<table id="customers">
+    <tr>
+        <th>UserName</th>
+        <th>Country</th>
+        <th>createdDate</th>
+
+    </tr>
+    <tr *ngFor="let usr of users ">
+        <!-- <td><a [routerLink]="['/feedwater',datas.id ]"> {{datas.apllicationName}}</a></td> -->
+        <td><a> {{usr.userName}}</a></td>
+        <td>{{usr.country}}</td>
+        <td>{{usr.createdDate|date}}</td>
+
+    </tr>
+</table>

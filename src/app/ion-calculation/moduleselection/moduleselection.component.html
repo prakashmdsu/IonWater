@@ -1,0 +1,117 @@
+<div class="row">
+    <div class="row">
+        <div class="  margin-lft col-sm-5 ">
+            <form class="form-group form-group-lg" (ngSubmit)="updateModuleSlection()" autocomplete="off"
+                [formGroup]="moduleSelection">
+
+
+                <div class="  col-sm-4">
+                    <label for="last-name">Flow: </label>
+
+                    <select class="form-control cursor__pointer custom" id="weight" name="textEASeekingInfo"
+                        formControlName="flow">
+                        <option value="" disabled selected hidden>
+                            -- Select --
+                        </option>
+                        <option value="english">
+                            english
+                        </option>
+                        <option value="metric">metric</option>
+                    </select>
+                </div>
+
+                <div class="inputspacng col-sm-4">
+                    <label for="last-name">ModuleFamily: </label>
+                    <select (change)="loadModuleSize()" class="form-control cursor__pointer custom" id="weight"
+                        name="moduleFamily" formControlName="moduleFamily">
+                        <option value="" disabled selected hidden>
+                            -- Select --
+                        </option>
+                        <option value="1">
+                            MX: Low Flow CEDI
+                        </option>
+                        <option value="2">
+                            LX: Medium Flow CEDI
+                        </option>
+                        <option value="3">
+                            VNX: High Flow CEDI
+                        </option>
+                    </select>
+                </div>
+
+                <div class="inputspacng col-sm-2">
+                    <label for="last-name">ProductFamily: </label>
+                    <input class="form-control" id="last-name" type="text" formControlName="productFamily">
+                </div>
+
+                <div class="inputspacng col-sm-2">
+                    <!-- <label for="last-name">ModuleSize: </label>
+                <input class="form-control" id="last-name" type="text" formControlName="moduleSize"> -->
+
+                    <select (change)="validateData()" class="form-control cursor__pointer custom" id="weight"
+                        name="moduleSize" formControlName="moduleSize">
+                        <option value="" disabled selected hidden>
+                            -- Select --
+                        </option>
+
+                        <option *ngFor="let option of moduleSizeSystem" [value]="option.id">
+                            {{option.moduleSize}}
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="inputspacng col-sm-2">
+                    <label for="last-name">NumberOfModule: </label>
+                    <input (change)="calculateFlowperModule()" class="form-control" id="last-name" type="text"
+                        formControlName="numberOfModule">
+                </div>
+
+
+                <div class="inputspacng col-sm-2">
+                    <label for="last-name">ProductFlowRate: </label>
+                    <input (change)="calculateFlowperModule()" class="form-control" id="last-name" type="text"
+                        formControlName="productFlowRate">
+                    <span>{{ moduleSelection.controls['flow'].value==='english'?'gpm':'m³/h' }}</span>
+                </div>
+                <div class="inputspacng col-sm-2">
+                    <label for="last-name">FlowPerModule: </label>
+                    <input class="form-control" readonly id="last-name" type="text" formControlName="flowPerModule">
+                    <span>{{ moduleSelection.controls['flow'].value==='english'?'gpm':'m³/h' }}</span>
+                </div>
+
+
+                <div class="inputspacng col-sm-3">
+                    <label for="last-name">Pressure: </label>
+
+                    <select class="form-control cursor__pointer custom" id="weight" name="textEASeekingInfo"
+                        formControlName="pressure">
+                        <option value="" disabled selected hidden>
+                            -- Select --
+                        </option>
+                        <option value="psi">
+                            psi
+                        </option>
+                        <option value="bar">bar</option>
+                    </select>
+                </div>
+
+
+                <div class="mrgintop">
+                    <span class="mrginLft"> <button class="btn btn-info" (click)="Back()">Back</button></span>
+                    <span class="mrginLft"> <button class="btn btn-primary" type="submit">Next</button> </span>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-5">
+            <app-feedwatersummary></app-feedwatersummary>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <app-warningmessage></app-warningmessage>
+        </div>
+    </div>
+
+</div>

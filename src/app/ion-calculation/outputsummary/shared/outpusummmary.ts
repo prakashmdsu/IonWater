@@ -1,0 +1,25 @@
+export interface OutputSummary {
+    ResistvityOutput: string,
+    NH4Output: string,
+    KOutput: string,
+    NaOutput: string,
+    MgOutput: string,
+    CaOutput: string,
+    SrOutput: string,
+    BaOutput: string,
+    FeOutput: string,
+    CuOutput: string,
+    AlOutput: string,
+    MnOutput: string,
+    CO3Output: string,
+    HCOOutput: string,
+    NOOutput: string,
+    ClOutput: string,
+    FOutput: string,
+    SOOutput: string,
+    CO2Output: string,
+    BOuput: string,
+    DPOuput: string,
+    SIO2Ouput: string
+
+}

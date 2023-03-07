@@ -1,0 +1,158 @@
+<div class="row">
+    <div class="col-sm-5">
+        <app-feedwatersummary></app-feedwatersummary>
+    </div>
+    <div class="col-sm-7">
+        <app-estimatedpowerrequirements></app-estimatedpowerrequirements>
+    </div>
+</div>
+<div class="ex1"></div>
+
+<div class="row">
+
+    <div class="col-sm-4">
+        <p style="color: blue;">Cations</p>
+
+        <table>
+            <tr>
+                <th>IONS</th>
+                <th></th>
+                <th>{{moduleSizeRecord.moduleSize}}</th>
+            </tr>
+
+            <tr>
+                <td>NH4</td>
+                <td>{{outputSummaryData.NH4Output}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>K</td>
+                <td>{{outputSummaryData.KOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Na</td>
+                <td>{{outputSummaryData.NaOutput}} </td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Mg</td>
+                <td> {{outputSummaryData.MgOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Ca</td>
+                <td>{{outputSummaryData.CaOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Sr</td>
+                <td>{{outputSummaryData.SrOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Ba</td>
+                <td>{{outputSummaryData.BaOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Fe</td>
+                <td>{{outputSummaryData.FeOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Cu</td>
+                <td>{{outputSummaryData.CuOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Al</td>
+                <td>{{outputSummaryData.AlOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Mn</td>
+                <td>{{outputSummaryData.MnOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="col-sm-4">
+        <p style="color: blue;">Anions</p>
+        <table>
+            <tr>
+                <th>IONS</th>
+
+                <th></th>
+                <th>{{moduleSizeRecord.moduleSize}}</th>
+            </tr>
+            <tr>
+                <td>CO3</td>
+                <td>{{outputSummaryData.CO3Output}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>HCO3</td>
+                <td>{{outputSummaryData.HCOOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>NO3</td>
+                <td>{{outputSummaryData.NOOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>Cl</td>
+                <td>{{outputSummaryData.ClOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>{{outputSummaryData.FOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+            <tr>
+                <td>So4</td>
+                <td>{{outputSummaryData.SOOutput}}</td>
+                <td>ppb as ion</td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="col-sm-4">
+        <p style="color: blue;">Others</p>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>{{moduleSizeRecord.moduleSize}}</th>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td></td>
+                <td>ppb</td>
+            </tr>
+            <tr>
+                <td>SiO2</td>
+                <td>{{outputSummaryData.CO2Output}}</td>
+                <td>ppb</td>
+            <tr>
+                <td>Co2</td>
+                <td>{{outputSummaryData.CO2Output}} </td>
+                <td>ppb as co2</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-sm-8">
+        <div class="mrgintop">
+            <span class="mrginLft"> <button class="btn btn-info" (click)="Back()">Back</button></span>
+            <span class="mrginLft"> <button class="btn btn-info" (click)="generatePdf()">Export</button></span>
+        </div>
+
+    </div>
+</div>

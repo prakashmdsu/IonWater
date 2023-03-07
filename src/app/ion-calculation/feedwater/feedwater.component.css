@@ -1,0 +1,77 @@
+
+/* .form-control {
+    padding: 0.15rem 0.75rem;
+} */
+
+
+.input-w
+{
+    margin-top:7px;
+}
+.input-w label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px !important;    
+}
+
+.input-w input {
+    display: inline-block;
+    vertical-align: middle;
+    width:85px;
+  }
+
+  
+
+input {
+    font-size: 0.9em;
+    }
+    
+.spc
+{
+   margin-left: 12px;
+}
+
+.total
+{
+    display: inline-block;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #0e0c0c;
+    /* border: 0.5px solid green; */
+    background-color: rgb(167, 159, 159);
+    padding: 3px;
+    margin: 7px;
+    width: 65px;
+}
+.hardess
+{
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #0e0c0c;
+    /* border: 0.5px solid green; */
+    background-color: rgb(167, 159, 159);
+    padding: 5px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+
+.option_inline
+{
+    display: inline-block !important;
+    width: 50px;
+    margin-left: 23px
+}
+
+.top_hws
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.top_applict
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

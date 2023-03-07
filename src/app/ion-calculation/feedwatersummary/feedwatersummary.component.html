@@ -1,0 +1,28 @@
+<p>Feedwater Summary </p>
+<table>
+    <tr>
+        <td>Conductivity @ 25 °C</td>
+        <td>{{feedWaterSummaryResult.conductvity}} μS/cm</td>
+    </tr>
+    <tr>
+        <td>Feedwater Conductivity Equivalent</td>
+        <td>{{feedWaterSummaryResult.feedWaterConductivity}} μS/cm</td>
+    </tr>
+    <tr>
+        <td>Total Exchangable Anions (TEA)</td>
+        <td>
+
+            Ca + Mg= {{feedWaterSummaryResult.totalExchangableAnions}} ppm CaCO₃
+        </td>
+    </tr>
+    <tr>
+        <td>Total Hardness CaCO3</td>
+        <td>
+            Ca + Mg= {{feedWaterSummaryResult.totalHardnessCaCO3}} ppm CaCO₃
+        </td>
+    </tr>
+    <tr>
+        <td>Temperature</td>
+        <td>{{feedWaterSummaryInput?.temp}} {{feedWaterSummaryInput?.tempUnit}}</td>
+    </tr>
+</table>

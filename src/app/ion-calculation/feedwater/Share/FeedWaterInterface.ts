@@ -1,0 +1,32 @@
+export interface Feedwater {
+    id?: string
+    hotwaterSensation?: string
+    apllicationName?: string
+    applicationType?: string
+    nH4?: number
+    k?: number
+    na?: number
+    mg?: number
+    ca?: number
+    sr?: number
+    ba?: number
+    fe?: number
+    cu?: number
+    al?: number
+    mn?: number
+    cO3?: number
+    hcO3?: number
+    nO3?: number
+    cl?: number
+    f?: number
+    sO4?: number
+    b?: number
+    siO2?: number
+    cO2?: number
+    h2S?: number
+    pH7?: number
+    calcpH7?: number
+    toc?: number
+    temp?: number
+    tempUnit?: string
+}

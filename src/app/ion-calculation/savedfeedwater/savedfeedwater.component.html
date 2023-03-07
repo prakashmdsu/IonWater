@@ -1,0 +1,19 @@
+<table id="customers">
+    <tr>
+        <th>File Name</th>
+        <th>Flow</th>
+        <th>Product Flowrate</th>
+        <th>Number of Module</th>
+        <th>Module Family</th>
+        <th>Created Date</th>
+    </tr>
+    <tr *ngFor="let datas of savedApplciation ">
+        <!-- <td><a [routerLink]="['/feedwater',datas.id ]"> {{datas.apllicationName}}</a></td> -->
+        <td><a (click)="routeTo(datas.id)"> {{datas.apllicationName}}</a></td>
+        <td>{{datas.flow}}</td>
+        <td>{{datas.productFlowRate}}</td>
+        <td>{{datas.numberOfModule}}</td>
+        <td>{{datas.moduleFamily}}</td>
+        <td>{{datas.createdDate|date}}</td>
+    </tr>
+</table>
